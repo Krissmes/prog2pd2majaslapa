@@ -15,8 +15,10 @@ def pievienot():
         vards = request.form['name'].capitalize()
         uzvards = request.form['surname'].capitalize()
         lietotajvards = request.form['username'].capitalize()
-        if vards and uzvards:
+        if vards and uzvards and lietotajvards:
             pievienot_lietotaju(vards, uzvards, lietotajvards)
+        else:
+            print("Tu kko neizdarīji pareizi")
     return render_template("pievienot.html")
 
 @app.route("/registracija")
